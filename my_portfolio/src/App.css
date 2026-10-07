@@ -1,8 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 .skills-section {
     padding: 2rem;
-    max-width: 1100px;
+    max-width: 1400px; /* Widened from 1100px to reduce empty side margins */
+    width: 92%;        
     margin: 0 auto;
 }
+
 .skills-title {
     font-size: 2rem;
     font-weight: bold;
@@ -10,40 +19,95 @@
     margin-bottom: 2rem;
     color: #333;
 }
-.skills-grid{
-    
+
+
+.skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
 }
+
 @media (max-width: 768px) {
+    .skills-section {
+        width: 100%;
+        padding: 1rem;
+    }
+
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
+
+
+  
 .skills-grid .skill-card {
     background-color: #f9f9f9;
     border-radius: 8px;
     padding: 1.5rem;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
+
+
+.project-card, 
+.featured-card, 
+.card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 100%;
+}
+
+/* Typography & Badges */
 .category {
     font-size: 1.125rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: #1f2937;
 }
-.skills-list{
+
+.skills-list {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: auto; 
+    padding-top: 1rem;
+    justify-content: center;
 }
+
 .skill-badge {
     background-color: #e5e7eb;
     border-radius: 9999px;
     padding: 0.25rem 0.75rem;
     font-size: 0.875rem;
+    color:white;
+    font-weight: 500;
+}
+.project-card div:last-child,
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+
+.project-card span,
+.project-tag {
+    background-color: #e5e7eb;
     color: #374151;
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
     font-weight: 500;
 }

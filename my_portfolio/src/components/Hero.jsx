@@ -1,13 +1,18 @@
 import meImg from '../assets/me.jpg';
 function  ProfileHeader() {
     return (
-        <div className="flex items-center gap-3">
-            <img src={meImg} alt="Profile" className="w-16 h-16 rounded-full object-cover"/>
+    <article>
+           <img src={meImg} alt="Profile" className="w-16 h-16 rounded-full object-cover"/>
+            <p>Software Engineer who loves creating innovative web solutions</p>
+        
+            <img />
             <div className='flex flex-col'>
                 <strong>Timothy Simiyu</strong>
                 <span>Full Stack Web Development</span>
                 </div>
-            </div>
+        
+           </article>
+       
             );
 }
 
