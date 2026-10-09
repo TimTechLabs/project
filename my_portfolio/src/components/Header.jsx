@@ -1,18 +1,35 @@
+
+import { Link } from 'react-router-dom';
+
 function Header() {
-    return (
-        <header className="flex justify-between items-center py-4 bg-white shadow-md">
-            <div className="bg-400 p-4 text-center">
-                <h1 className="text-2xl font-bold text-800">welcome to my portfolio</h1>
-            </div>
-            <nav className="flex items-center gap-6">   
-                <a href="/contact" className="text-green-500">contact</a>
-                <a href="/project" className="text-blue-500">project</a>
-                <a href="/skills" className="text-indigo-500">skills</a>
-                <a href="/about" className="text-red-400">About</a>
-                <a href="https://github.com/Timtechlabs" className="text-blue-500">Github</a>
-            </nav>
-        
-        </header>
-    );
+  return (
+    <header className="flex justify-between items-center py-4 px-6 border-b border-gray-200">
+      <div className="text-xl font-bold text-gray-800">
+        <Link to="/">MyPortfolio</Link>
+      </div>
+
+      <nav className="flex items-center gap-6">
+        <Link to="/" className="text-gray-600 hover:text-gray-900 font-medium">
+          Home
+        </Link>
+        <Link to="/about" className="text-gray-600 hover:text-gray-900 font-medium">
+          About
+        </Link>
+        <Link to="/skills" className="text-gray-600 hover:text-gray-900 font-medium">
+          Skills
+        </Link>
+        <Link to="/login" className="text-gray-600 hover:text-blue-600 font-medium">
+          Login
+        </Link>
+        <Link 
+          to="/register" 
+          className="bg-blue-600 text-white font-medium px-4 py-1.5 rounded-md hover:bg-blue-700 transition-colors"
+        >
+          Register
+        </Link>
+      </nav>
+    </header>
+  );
 }
+
 export default Header;

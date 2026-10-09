@@ -37,36 +37,39 @@ function featuredProject() {
         {projects.map((project, index) => (
           <article 
             key={index} 
-            className="bg-white p-6 rounded-lg border border-gray-200"
+            className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col"
           >
-            
             {project.image && (
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="float-right ml-4 mb-2 w-12 h-12 rounded-lg object-cover border border-gray-200"
-              />
+              <div className="w-full h-48 bg-gray-100">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             )}
 
-            
-            <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-            <p className="text-gray-600 mb-4">{project.description}</p>
+            <div className="p-6 flex flex-col flex-grow">
+              <h3 className="text-xl font-bold mb-2 text-gray-900">{project.title}</h3>
+              <p className="text-gray-600 text-sm mb-4 leading-relaxed flex-grow">{project.description}</p>
 
-            
-            <div className="flex flex-wrap gap-2 mb-4 clear-left">
-              {project.techStack.map((tech, i) => (
-                <span 
-                  key={i} 
-                  className="bg-gray-100 text-gray-700 text-xs px-2.5 py-1 rounded-full font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.techStack.map((tech, i) => (
+                  <span 
+                    key={i} 
+                    className="bg-gray-100 text-gray-700 text-xs px-2.5 py-1 rounded-full font-medium"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
             </div>
           </article>
         ))}
       </div>
     </section>
-    );
+  );
 }
+
 export default featuredProject;

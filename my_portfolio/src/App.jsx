@@ -1,24 +1,36 @@
 
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Skills from "./components/skills";
-import FeaturedProject from "./components/featuredproject";
-import "./App.css";
-
-
-
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Sidebar from './components/sidebar';
+import Hero from './components/Hero';
+import Skills from './components/skills';
+import FeaturedProject from './components/featuredproject';
+import Login from './components/login';
+import Register from './components/Register';
 
 function App() {
-    return (
-        <div className="min-h-screen bg-gray-50 text-gray-900">
-            <Header />
-            <main className="max-w-4xl mx-auto px-4 py-8 space-y-12">
-                 <Hero />
+  return (
+    <Router>
+      <div className="flex min-h-screen bg-white text-gray-900">
+        <Sidebar />
+        <div className="flex-1">
+          <Routes>
+            <Route 
+              path="/" 
+              element={
+                <main className="max-w-5xl mx-auto px-6 py-8 space-y-12">
+                  <Hero />
                   <Skills />
-                <FeaturedProject />
-            </main>
+                  <FeaturedProject />
+                </main>
+              } 
+            />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
         </div>
-    );
+      </div>
+    </Router>
+  );
 }
+
 export default App;
